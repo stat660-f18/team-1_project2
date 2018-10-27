@@ -45,6 +45,17 @@ Follow Up: Might try to see if we can get more clarification on the homeowners a
 well as seperate by state/region.
 ;
 
+proc means
+  data = loanstats
+    class 
+      home_ownership
+    ;
+    var
+      annual inc
+    ;
+ run
+ ;
+ 
 title1
 'Research Question: Is there a correlation between interest rate and the annual income with loan amount and grade?'
 ;
@@ -65,6 +76,13 @@ Follow Up: Might have to change the question around if we find no correlation
 by adding other variables.
 ;
 
+proc corr
+    data = loanstats
+      model 
+        int_rate = annual_inc + loan_amnt + grade
+        ;
+ run;
+ 
 title1
 'Research Question: What is the distribution of the loan amounts based on the purpose of the loan?'
 ;
@@ -84,3 +102,9 @@ Follow Up: Same as the first question, might want to filter out through state in
 to determine factors of cost of living and debt owed since different states have different
 home costs.
 ;
+
+proc sgplot
+  data = loanstats
+    vbox loan_amnt / category purpose
+    ;
+run;
