@@ -130,4 +130,72 @@ https://github.com/stat660/team-1_project2/blob/master/data/LoanStats_part3.xlsx
 * sort and check raw datasets for duplicates with respect to their unique ids,
   removing blank rows, if needed;
 
+proc sort
+        nodupkey
+        data=Loanstat1_raw
+        dupout=Loanstat1_raw_dups
+        out=Loanstat1_raw_sorted(where=(not(missing(member_id))))
+    ;
+    by
+        member_id
+    ;
+run;
 
+
+proc sort
+        nodupkey
+        data=Loanstat2_raw
+        dupout=Loanstat2_raw_dups
+        out=Loanstat2_raw_sorted(where=(not(missing(member_id))))
+    ;
+    by
+        member_id
+    ;
+run;
+
+
+proc sort
+        nodupkey
+        data=Loanstat3_raw
+        dupout=Loanstat3_raw_dups
+        out=Loanstat3_raw_sorted(where=(not(missing(member_id))))
+    ;
+    by
+        member_id
+    ;
+run;
+
+* combine Loanstat1 and Loanstat3 datasets vertically, indicator variables
+Loanstat1_data_ro and Loanstat3_data_row are created using the in= dataset 
+option, and created data source column to show the which dataset does the 
+data come from;
+
+data Loanstat_analytic_file_v1;
+    set
+        Loanstat1_raw(in=Loanstat1_data_row)
+        Loanstat3_raw(in=Loanstat3_data_row)
+    ;
+    if
+        Loanstat1_data_row=1
+    then
+        do;
+            data_source="stat1";
+        end;
+    else
+        do;
+            data_source="stat3";
+        end;
+run;
+
+* build new analytic dataset by horizontally combining datasets 
+Loanstat1_raw_sorted and Loanstat2_raw_sorted;
+
+data Loanstat_analytic_file_h1;
+    merge
+        Loanstat1_raw_sorted
+        Loanstat2_raw_sorted
+    ;
+    by
+        member_id
+    ;
+run;
