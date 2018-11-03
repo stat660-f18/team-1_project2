@@ -46,12 +46,12 @@ well as seperate by state/region.
 ;
 
 proc means
-  data = loanstats
+  data = Loanstat_analytic_file_v1;
     class 
       home_ownership
     ;
     var
-      annual inc
+      annual_inc
     ;
  run
  ;
