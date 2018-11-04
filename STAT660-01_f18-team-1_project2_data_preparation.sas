@@ -167,11 +167,10 @@ run;
 
 * combine Loanstat1 and Loanstat3 datasets vertically, indicator variables
 Loanstat1_data_ro and Loanstat3_data_row are created using the in= dataset 
-option, and created data source column to show the which dataset does the 
-data come from;
+option, and keep colunms that are used in the research questions;
 
 data Loanstat_analytic_file_v1;
-	 retain
+	retain
         member_id
 		annual_inc
 		grade
@@ -189,16 +188,6 @@ data Loanstat_analytic_file_v1;
         Loanstat1_raw(in=Loanstat1_data_row)
         Loanstat3_raw(in=Loanstat3_data_row)
     ;
-    if
-        Loanstat1_data_row=1
-    then
-        do;
-            data_source="stat1";
-        end;
-    else
-        do;
-            data_source="stat3";
-        end;
 run;
 
 * build new analytic dataset by horizontally combining datasets 
