@@ -170,7 +170,7 @@ Loanstat1_data_ro and Loanstat3_data_row are created using the in= dataset
 option, and keep colunms that are used in the research questions;
 
 data Loanstat_analytic_file_v1;
-	retain
+    retain
         member_id
         annual_inc
         grade
