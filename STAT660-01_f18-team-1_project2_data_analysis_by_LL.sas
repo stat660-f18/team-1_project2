@@ -34,7 +34,19 @@ title2
 'Rationale: This shows the buying power and cost of living for someone to own a home'
 ;
 
-*
+footnote1
+'Here we can see see that the average annual income for those who have a mortgage is $85,477.61, owners is $78,328 and those who rent is $67,263.64'
+;
+
+footnote2
+'This makes sense as those who rent are more likely to rent due to lack of income in purchasing a house'
+;
+
+footnote3
+'I would be interested in learning how the mortgage and owner labels differ as well as seeing the range of incomes'
+;
+
+* 
 Methodology: Here I will use proc means to get the mean and median of the homeowners 
 and renters from the data set.
 
@@ -58,6 +70,8 @@ proc means
     ;
  run
  ;
+ title;
+ footnote;
  
 title1
 'Research Question: Is there a correlation between interest rate and the annual income with loan amount and grade?'
@@ -65,6 +79,18 @@ title1
 
 title2
 'Rationale: This would help show what is considered in terms of interest rates'
+;
+
+footnote1
+' here we can see that annual inc has a negative correlation to interest rate and loan amount has a positive correlation which makes sense given that the size would have a higher interest rate du eto risk.'
+;
+
+footnote2
+' we can also see that both values are greater than alpha and thus we can say that annual income and loan amount are significant to the interest rate'
+;
+
+footnote3
+'we might have to include grade and find out what determines grade but currently we cannot seem to find more information on it'
 ;
 
 *
@@ -83,11 +109,15 @@ by adding other variables.
 ;
 
 proc corr
-    data = loanstats
-      model 
-        int_rate = annual_inc + loan_amnt + grade
+    data = Loanstat_analytic_file_v1;
+      var annual_inc loan_amnt
+      ;
+      with
+        int_rate
         ;
  run;
+ title;
+ footnote;
  
 title1
 'Research Question: What is the distribution of the loan amounts based on the purpose of the loan?'
@@ -95,6 +125,17 @@ title1
 
 title2
 'Rationale: Would help get a sense of what the majority of people require loans for and roughly the amounts requested'
+;
+
+footnote1
+'here we can see that credit card loans take the highest range along with major purchases which I would wonder if they correlate with one another';
+
+footnote2
+' we can also see that medical and moving loans are the smallest of all loans which is interesting given the struggle of medical costs for those uninsured'
+;
+
+footnote3
+' i would very much like to break down debt consolidation to learn whether that also goes into credit card debt and such, the house loan is not very surprising'
 ;
 
 *
@@ -113,7 +154,9 @@ home costs.
 ;
 
 proc sgplot
-  data = loanstats
-    vbox loan_amnt / category purpose
+  data = Loanstat_analytic_file_h1;
+    vbox loan_amnt / category = purpose
     ;
 run;
+title;
+footnote;
