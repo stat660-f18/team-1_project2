@@ -198,7 +198,7 @@ corresponding data-analysis files;
 data Loanstat_analytic_file_h1;
     retain
         member_id
-		annual_inc
+		annual_inc	
 		grade
 		int_rate
 		purpose
@@ -206,7 +206,7 @@ data Loanstat_analytic_file_h1;
 		addr_state
     ;
     keep
-        member_id
+        member_id	
 		annual_inc
 		grade
 		int_rate
