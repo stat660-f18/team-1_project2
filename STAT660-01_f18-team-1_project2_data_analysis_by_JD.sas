@@ -74,8 +74,8 @@ five-number summaries.
 ;
 
 proc means data=Loanstat_analytic_file_h1;
-	var loan_amnt;
-	class addr_state;
+    var loan_amnt;
+    class addr_state;
 run;
 
 
