@@ -172,17 +172,17 @@ option, and keep colunms that are used in the research questions;
 data Loanstat_analytic_file_v1;
 	retain
         member_id
-		annual_inc
-		grade
-		int_rate
-		loan_amnt
+        annual_inc
+        grade
+        int_rate
+        loan_amnt
     ;
     keep
         member_id
-		annual_inc
-		grade
-		int_rate
-		loan_amnt
+        annual_inc
+        grade
+        int_rate
+        loan_amnt
     ;
     set
         Loanstat1_raw(in=Loanstat1_data_row)
@@ -198,21 +198,21 @@ corresponding data-analysis files;
 data Loanstat_analytic_file_h1;
     retain
         member_id
-		annual_inc	
-		grade
-		int_rate
-		purpose
-		loan_amnt
-		addr_state
+        annual_inc	
+        grade
+        int_rate
+        purpose
+        loan_amnt
+        addr_state
     ;
     keep
         member_id	
-		annual_inc
-		grade
-		int_rate
-		purpose
-		loan_amnt
-		addr_state
+        annual_inc
+        grade
+        int_rate
+        purpose
+        loan_amnt
+        addr_state
     ;
     merge
         Loanstat1_raw_sorted
