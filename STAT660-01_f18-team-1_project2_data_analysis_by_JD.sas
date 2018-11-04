@@ -2,7 +2,6 @@
 **************** 80-character banner for column width reference ***************;
 * (set window width to banner width to calibrate line length to 80 characters *;
 *******************************************************************************;
-
 *
 This file uses the following analytic dataset to address several research
 questions regarding loan amounts and statistics on loans
@@ -25,16 +24,14 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 *******************************************************************************;
 * Research Question Analysis Starting Point;
 *******************************************************************************;
-
-title1
-'Research Question:What are the top three members that had the highest annual income?'
-;
-
-title2
-'Rationale: This should help identify three members that earn the most annually'
-;
-
 *
+Question:What are the top three members that had the highest annual income?
+
+Rationale: This should help identify three members that earn the most annually.
+
+Note: This compares column "annual_income" and "member_id" from dataset Loanstat1
+and Loanstat3
+
 Methodology: Use PROC PORT to sort the annual income in the combined dataset 
 descendingly and use PROC PRINT to output the top 3 member id accordingly.
 
@@ -45,16 +42,17 @@ income differences more explicit.
 ;
 
 
- 
-title1
-'Research Question: What is the average loan amount for each state?'
-;
-
-title2
-'Rationale: This shows the lending situation from each state.'
-;
-
+*******************************************************************************;
+* Research Question Analysis Starting Point;
+*******************************************************************************;
 *
+Question: What is the average loan amount for each state?
+
+Rationale: This shows the lending situation from each state.
+
+Note: This compares column "loan_amount", "state", and "member_id" from dataset 
+Loanstat1 and Loanstat2
+
 Methodology: Use the PROC MEANS statement to compute the mean loan amount.
 
 Limitations: We cannot know the distribution of the loan amount for each state.
@@ -64,16 +62,17 @@ five-number summaries.
 ;
 
 
- 
-title1
-'Research Question: What is the purpose of the highest loan amount?'
-;
-
-title2
-'Rationale: This would help identify what is the use of the largest amount of money borrowed.'
-;
-
+*******************************************************************************;
+* Research Question Analysis Starting Point;
+*******************************************************************************;
 *
+Question: What is the purpose of the highest loan amount?
+
+Rationale: This would help identify what is the use of the largest amount of money borrowed.
+
+Note: This compares column "loan_amount", "purpose",and "member_id" from dataset 
+Loanstat1 and Loanstat2
+
 Methodology: Use PROC SORT statement to sort the loan amount descendingly and find
 out the purpose of it.
 
