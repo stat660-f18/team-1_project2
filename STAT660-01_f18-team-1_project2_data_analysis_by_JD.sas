@@ -41,6 +41,18 @@ Follow Up: We can add PROC SGPLOT statement to plot a bar graph, making the annu
 income differences more explicit.
 ;
 
+proc sort
+        data=Loanstat_analytic_file_v1
+        out=Loanstat_analytic_file_v1_sorted
+    ;
+    by descending annual_inc;
+run;
+
+proc print data=Loanstat_analytic_file_v1_sorted(obs=3);
+    id member_id;
+    var annual_inc;
+run;
+
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -60,6 +72,11 @@ Limitations: We cannot know the distribution of the loan amount for each state.
 Follow Up: Add min, median, and max in the PROC MEANS statement to compute the 
 five-number summaries.
 ;
+
+proc means data=Loanstat_analytic_file_h1;
+	var loan_amnt;
+	class addr_state;
+run;
 
 
 *******************************************************************************;
@@ -81,4 +98,14 @@ Limitations: The currency symbol for the loan amount is not clear.
 Follow Up: Use PROC FORMAT to add dollar sign in the data output.
 ;
 
+proc sort
+        data=Loanstat_analytic_file_h1
+        out=Loanstat_analytic_file_h1_sorted
+    ;
+    by descending loan_amnt;
+run;
 
+proc print data=Loanstat_analytic_file_h1_sorted(obs=1);
+    id purpose;
+    var loan_amnt;
+run;
