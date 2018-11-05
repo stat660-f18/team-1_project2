@@ -34,15 +34,13 @@ title2
 ;
 
 footnote1
-"Needed to be update"
+"From the output, we notice that the top three members that has the highest annual income are member 1301, 1135, and 
+1238, with income of 340000, 285000, and 267525, respectively."
 ;
 
 footnote2
-"Needed to be update"
-;
-
-footnote3
-"Needed to be update"
+"Given the result, we can add some steps to figure out why some members with high income still borrow money
+from LendingClub. Try to find out the purpose of it."
 ;
 
 *
@@ -62,17 +60,34 @@ proc sort
         data=Loanstat_analytic_file_v1
         out=Loanstat_analytic_file_v1_sorted
     ;
-    by descending annual_inc;
+    by 
+        descending annual_inc
+    ;
 run;
 
-proc print data=Loanstat_analytic_file_v1_sorted(obs=3);
-    id member_id;
-    var annual_inc;
+
+proc print 
+        data=Loanstat_analytic_file_v1_sorted(obs=3)
+    ;
+    id 
+        member_id
+    ;
+    var 
+        annual_inc
+    ;
+run;
+
+proc sgplot
+        data=Loanstat_analytic_file_v1_sorted(obs=3)
+	;
+	vbar 
+        member_id/ response=annual_inc
+	;
 run;
 
 title;
 footnote;
-
+		
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -87,15 +102,13 @@ title2
 ;
 
 footnote1
-"Needed to be update"
+"From the output, we can see the 5-number summaries for loan amount in each state. For example,
+the mean loan amount for California is 15063.24."
 ;
 
 footnote2
-"Needed to be update"
-;
-
-footnote3
-"Needed to be update"
+"Focusing on the mean loan amount, the lowest one is in MS. Investigation could be performed to find out the 
+reason of it."
 ;
 
 *
@@ -110,9 +123,15 @@ Follow Up: Add min, median, and max in the PROC MEANS statement to compute the
 five-number summaries.
 ;
 
-proc means data=Loanstat_analytic_file_h1;
-    var loan_amnt;
-    class addr_state;
+proc means 
+        data=Loanstat_analytic_file_h1
+    ;
+    var 
+        loan_amnt
+    ;
+    class 
+        addr_state
+    ;
 run;
 
 
@@ -129,15 +148,12 @@ title2
 ;
 
 footnote1
-"Needed to be update"
+"From the output, we notice that the highest loan amount is 40000. The money is used for credit card."
 ;
 
 footnote2
-"Needed to be update"
-;
-
-footnote3
-"Needed to be update"
+"We should try to understand the meaning for each purpose in the datasets, since the description of purpose
+is not detailed"
 ;
 
 *
@@ -156,11 +172,19 @@ proc sort
         data=Loanstat_analytic_file_h1
         out=Loanstat_analytic_file_h1_sorted
     ;
-    by descending loan_amnt;
+    by 
+        descending loan_amnt
+    ;
 run;
 
-proc print data=Loanstat_analytic_file_h1_sorted(obs=1);
-    id purpose;
-    var loan_amnt;
+proc print 
+        data=Loanstat_analytic_file_h1_sorted(obs=1)
+    ;
+    id 
+        purpose
+    ;
+    var 
+        loan_amnt
+    ;
 run;
 
