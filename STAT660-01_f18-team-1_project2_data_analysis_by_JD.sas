@@ -46,8 +46,8 @@ footnote3
 ;
 
 *
-Note: This compares column "annual_income" and "member_id" from dataset Loanstat1
-and Loanstat3
+Note: This compares column "annual_income" and "member_id" from dataset 
+Loanstat1 and Loanstat3
 
 Methodology: Use PROC PORT to sort the annual income in the combined dataset 
 descendingly and use PROC PRINT to output the top 3 member id accordingly.
@@ -163,3 +163,4 @@ proc print data=Loanstat_analytic_file_h1_sorted(obs=1);
     id purpose;
     var loan_amnt;
 run;
+
