@@ -24,8 +24,10 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 *******************************************************************************;
 * Research Question Analysis Starting Point;
 *******************************************************************************;
-*
-Question:What are the top three members that had the highest annual income?
+
+title1
+'Research Question:What are the top three members that had the highest annual income?'
+;
 
 Rationale: This should help identify three members that earn the most annually.
 
