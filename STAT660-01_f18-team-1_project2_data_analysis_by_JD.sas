@@ -29,8 +29,23 @@ title1
 'Research Question:What are the top three members that had the highest annual income?'
 ;
 
-Rationale: This should help identify three members that earn the most annually.
+title2
+'Rationale: This should help identify three members that earn the most annually.'
+;
 
+footnote1
+"Needed to be update"
+;
+
+footnote2
+"Needed to be update"
+;
+
+footnote3
+"Needed to be update"
+;
+
+*
 Note: This compares column "annual_income" and "member_id" from dataset Loanstat1
 and Loanstat3
 
@@ -39,8 +54,8 @@ descendingly and use PROC PRINT to output the top 3 member id accordingly.
 
 Limitations: The highest top 3 annual income data are not visualized.
 
-Follow Up: We can add PROC SGPLOT statement to plot a bar graph, making the annual 
-income differences more explicit.
+Follow Up: We can add PROC SGPLOT statement to plot a bar graph, making the 
+annual income differences more explicit.
 ;
 
 proc sort
@@ -55,15 +70,35 @@ proc print data=Loanstat_analytic_file_v1_sorted(obs=3);
     var annual_inc;
 run;
 
+title;
+footnote;
+
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
 *******************************************************************************;
+
+title1
+'Research Question: What is the average loan amount for each state?'
+;
+
+title2
+'Rationale: This shows the lending situation from each state.'
+;
+
+footnote1
+"Needed to be update"
+;
+
+footnote2
+"Needed to be update"
+;
+
+footnote3
+"Needed to be update"
+;
+
 *
-Question: What is the average loan amount for each state?
-
-Rationale: This shows the lending situation from each state.
-
 Note: This compares column "loan_amount", "state", and "member_id" from dataset 
 Loanstat1 and Loanstat2
 
@@ -84,16 +119,33 @@ run;
 *******************************************************************************;
 * Research Question Analysis Starting Point;
 *******************************************************************************;
+
+title1
+'Research Question: What is the purpose of the highest loan amount?'
+;
+
+title2
+'Rationale: This would help identify what is the use of the largest amount of money borrowed.'
+;
+
+footnote1
+"Needed to be update"
+;
+
+footnote2
+"Needed to be update"
+;
+
+footnote3
+"Needed to be update"
+;
+
 *
-Question: What is the purpose of the highest loan amount?
-
-Rationale: This would help identify what is the use of the largest amount of money borrowed.
-
 Note: This compares column "loan_amount", "purpose",and "member_id" from dataset 
 Loanstat1 and Loanstat2
 
-Methodology: Use PROC SORT statement to sort the loan amount descendingly and find
-out the purpose of it.
+Methodology: Use PROC SORT statement to sort the loan amount descendingly and 
+find out the purpose of it.
 
 Limitations: The currency symbol for the loan amount is not clear.
 
