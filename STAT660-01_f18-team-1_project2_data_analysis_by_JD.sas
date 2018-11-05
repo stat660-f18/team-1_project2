@@ -80,8 +80,8 @@ run;
 proc sgplot
         data=Loanstat_analytic_file_v1_sorted(obs=3)
 	;
-	vbar 
-        member_id/ response=annual_inc
+    vbar 
+        member_id/response=annual_inc
 	;
 run;
 
