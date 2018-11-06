@@ -47,17 +47,17 @@ footnote3
 ;
 
 * 
-Methodology: Here I will use proc means to get the mean and median of the homeowners 
-and renters from the data set.
+Methodology: Here I will use proc means to get the mean and median of the 
+homeowners and renters from the data set.
 
-Note: This is compares the columns "annual_inc" and "home_ownership" from LoanStat_part1
-to LoanStat_part3 with the same column names.
+Note: This is compares the columns "annual_inc" and "home_ownership" from 
+LoanStat_part1 to LoanStat_part3 with the same column names.
 
-Limitations: I might run into some issues with trying to differentiate owners versus 
-mortgage and if owners might be landlords.
+Limitations: I might run into some issues with trying to differentiate owners 
+versus mortgage and if owners might be landlords.
 
-Follow Up: Might try to see if we can get more clarification on the homeowners as 
-well as seperate by state/region.
+Follow Up: Might try to see if we can get more clarification on the homeowners 
+as well as seperate by state/region.
 ;
 
 proc means
@@ -95,11 +95,12 @@ footnote3
 
 *
 Methodology: Here I will try to use proc corr to find a correlation amongst the data
-following a model of possibly interest rate = annual income + loan amount + grade
-with grade being a character variable so seeing how we apply log regg for that.
+following a model of possibly interest rate = annual income + loan amount + 
+grade with grade being a character variable so seeing how we apply log regg 
+for that.
 
-Note:  This is compares the columns "annual_inc" "grade" "int_rate" and "loan_amnt" 
-from LoanStat_part1 to LoanStat_part3 with the same column names
+Note:  This is compares the columns "annual_inc" "grade" "int_rate" and 
+"loan_amnt" from LoanStat_part1 to LoanStat_part3 with the same column names
 
 Limitations: Will try to see if we can add more variables or possibly have to 
 add interactions within our model, could get messy.
@@ -139,18 +140,18 @@ footnote3
 ;
 
 *
-Methodology: Might want to go the box whiskerplot route for this data and graph it with 
-my y being loan amounts and x being type of loan.
+Methodology: Might want to go the box whiskerplot route for this data and 
+graph it with my y being loan amounts and x being type of loan.
 
-Note: This compares the columns "purpose" from datast LoanStat_Part2 with the column 
-"loan_amnt" from datasets LoanStat_Part1 and LoanStat_Part3.
+Note: This compares the columns "purpose" from datast LoanStat_Part2 with the 
+column "loan_amnt" from datasets LoanStat_Part1 and LoanStat_Part3.
 
-Limitations: Hopefully the data is clean enough to not vary in types of loans and
-similarily having to distinguish sub types of loans.
+Limitations: Hopefully the data is clean enough to not vary in types of loans 
+and similarily having to distinguish sub types of loans.
 
-Follow Up: Same as the first question, might want to filter out through state in order
-to determine factors of cost of living and debt owed since different states have different
-home costs.
+Follow Up: Same as the first question, might want to filter out through state 
+in order to determine factors of cost of living and debt owed since different 
+states have different home costs.
 ;
 
 proc sgplot
