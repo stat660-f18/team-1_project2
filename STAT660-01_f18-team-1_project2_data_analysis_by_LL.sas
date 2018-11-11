@@ -82,7 +82,7 @@ title2
 ;
 
 footnote1
-' here we can see that annual inc has a negative correlation to interest rate and loan amount has a positive correlation which makes sense given that the size would have a higher interest rate du eto risk.'
+' here we can see that annual inc has a negative correlation to interest rate and loan amount has a positive correlation which makes sense given that the size would have a higher interest rate due to risk it also seems that grade has a negative correlation including the A grade
 ;
 
 footnote2
@@ -109,14 +109,35 @@ Follow Up: Might have to change the question around if we find no correlation
 by adding other variables.
 ;
 
-proc corr
-    data = Loanstat_analytic_file_v1;
-      var annual_inc loan_amnt
-      ;
-      with
-        int_rate
-        ;
- run;
+
+proc glmmod 
+  data = 
+    Loanstat_analytic_file_v1 
+  outdesign=
+    Loanstat_analytic_file_v1 
+  outparm=
+    GLMParm
+    ;
+   class 
+    grade
+    ;
+   model 
+    int_rate = grade;
+run
+;
+proc print data=Loanstat_analytic_file_v1
+; 
+run
+;
+
+proc reg data =
+  Loanstat_analytic_file_v1 
+  ;
+  DummyVars: model int_rate = COL2-COL9
+  ;
+  ods select ParameterEstimates;
+  quit
+  ;
  title;
  footnote;
  
