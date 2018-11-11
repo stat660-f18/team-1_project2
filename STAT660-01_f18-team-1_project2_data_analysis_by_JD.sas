@@ -34,13 +34,11 @@ title2
 ;
 
 footnote1
-"From the output, we notice that the top three members that has the highest annual income are member 1301, 1135, and 
-1238, with income of 340000, 285000, and 267525, respectively."
+"From the output, we notice that the top three members that has the highest annual income are member 1301, 1135, and 1238, with income of 340000, 285000, and 267525, respectively."
 ;
 
 footnote2
-"Given the result, we can add some steps to figure out why some members with high income still borrow money
-from LendingClub. Try to find out the purpose of it."
+"Given the result, we can add some steps to figure out why some members with high income still borrow money from LendingClub. Try to find out the purpose of it."
 ;
 
 *
@@ -102,13 +100,11 @@ title2
 ;
 
 footnote1
-"From the output, we can see the 5-number summaries for loan amount in each state. For example,
-the mean loan amount for California is 15063.24."
+"From the output, we can see the 5-number summaries for loan amount in each state. For example, the mean loan amount for California is 15063.24."
 ;
 
 footnote2
-"Focusing on the mean loan amount, the lowest one is in MS. Investigation could be performed to find out the 
-reason of it."
+"Focusing on the mean loan amount, the lowest one is in MS. Investigation could be performed to find out the reason of it."
 ;
 
 *
@@ -152,8 +148,7 @@ footnote1
 ;
 
 footnote2
-"We should try to understand the meaning for each purpose in the datasets, since the description of purpose
-is not detailed"
+"We should try to understand the meaning for each purpose in the datasets, since the description of purpose is not detailed"
 ;
 
 *
