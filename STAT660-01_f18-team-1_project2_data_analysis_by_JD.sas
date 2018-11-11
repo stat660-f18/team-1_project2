@@ -130,6 +130,9 @@ proc means
     ;
 run;
 
+title;
+footnote;
+
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -182,4 +185,7 @@ proc print
         loan_amnt
     ;
 run;
+
+title;
+footnote;
 
