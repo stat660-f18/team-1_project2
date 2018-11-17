@@ -191,8 +191,8 @@ data Loanstat_analytic_file_v1;
 run;
 
 * build new analytic dataset by horizontally combining datasets 
-Loanstat1_raw_sorted and Loanstat2_raw_sorted, with the least number of columns and
-minimal cleaning/transformation needed to address research questions in
+Loanstat1_raw_sorted and Loanstat2_raw_sorted, with the least number of columns 
+and minimal cleaning/transformation needed to address research questions in
 corresponding data-analysis files;
 
 data Loanstat_analytic_file_h1;
