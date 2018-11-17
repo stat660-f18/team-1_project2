@@ -155,8 +155,8 @@ footnote2
 ;
 
 *
-Note: This compares column "loan_amount", "purpose",and "member_id" from dataset 
-Loanstat1 and Loanstat2
+Note: This compares column "loan_amount", "purpose",and "member_id" from 
+dataset Loanstat1 and Loanstat2
 
 Methodology: Use PROC SORT statement to sort the loan amount descendingly and 
 find out the purpose of it.
