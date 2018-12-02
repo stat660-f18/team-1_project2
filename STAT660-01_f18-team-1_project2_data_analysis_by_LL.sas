@@ -97,9 +97,9 @@ footnote3
 Note:  This is compares the columns "annual_inc" "grade" "int_rate" and 
 "loan_amnt" from LoanStat_part1 to LoanStat_part3 with the same column names
 
-Methodology: Here I will try to use proc corr to find a correlation amongst the data
-following a model of possibly interest rate = annual income + loan amount + 
-grade with grade being a character variable so seeing how we apply log regg 
+Methodology: Here I will try to use proc corr to find a correlation amongst the 
+data following a model of possibly interest rate = annual income + loan amount 
++ grade with grade being a character variable so seeing how we apply log regg 
 for that.
 
 Limitations: Will try to see if we can add more variables or possibly have to 
