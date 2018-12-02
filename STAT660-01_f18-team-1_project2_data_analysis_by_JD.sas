@@ -16,8 +16,10 @@ See included file for dataset properties
 X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPATH))-%length(%sysget(SAS_EXECFILENAME))))""";
 
 
-* load external file that generates analytic datasets cde_2014_analytic_file,
-  cde_2014_analytic_file_sort_frpm, and cde_2014_analytic_file_sort_sat;
+* load external file that generates analytic datasets Loanstat_analytic_file_v1,
+Loanstat_analytic_file_h1, Loanstat_analytic_file_v1_sorted, and Loanstat_
+analytic_file_h1_sorted;
+
 %include '.\STAT660-01_f18-team-1_project2_data_preparation.sas';
 
 
@@ -34,13 +36,11 @@ title2
 ;
 
 footnote1
-"From the output, we notice that the top three members that has the highest annual income are member 1301, 1135, and 
-1238, with income of 340000, 285000, and 267525, respectively."
+"From the output, we notice that the top three members that has the highest annual income are member 1301, 1135, and 1238, with income of 340000, 285000, and 267525, respectively."
 ;
 
 footnote2
-"Given the result, we can add some steps to figure out why some members with high income still borrow money
-from LendingClub. Try to find out the purpose of it."
+"Given the result, we can add some steps to figure out why some members with high income still borrow money from LendingClub. Try to find out the purpose of it."
 ;
 
 *
@@ -102,13 +102,11 @@ title2
 ;
 
 footnote1
-"From the output, we can see the 5-number summaries for loan amount in each state. For example,
-the mean loan amount for California is 15063.24."
+"From the output, we can see the 5-number summaries for loan amount in each state. For example, the mean loan amount for California is 15063.24."
 ;
 
 footnote2
-"Focusing on the mean loan amount, the lowest one is in MS. Investigation could be performed to find out the 
-reason of it."
+"Focusing on the mean loan amount, the lowest one is in MS. Investigation could be performed to find out the reason of it."
 ;
 
 *
@@ -134,6 +132,9 @@ proc means
     ;
 run;
 
+title;
+footnote;
+
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -152,13 +153,12 @@ footnote1
 ;
 
 footnote2
-"We should try to understand the meaning for each purpose in the datasets, since the description of purpose
-is not detailed"
+"We should try to understand the meaning for each purpose in the datasets, since the description of purpose is not detailed"
 ;
 
 *
-Note: This compares column "loan_amount", "purpose",and "member_id" from dataset 
-Loanstat1 and Loanstat2
+Note: This compares column "loan_amount", "purpose",and "member_id" from 
+dataset Loanstat1 and Loanstat2
 
 Methodology: Use PROC SORT statement to sort the loan amount descendingly and 
 find out the purpose of it.
@@ -187,4 +187,7 @@ proc print
         loan_amnt
     ;
 run;
+
+title;
+footnote;
 
