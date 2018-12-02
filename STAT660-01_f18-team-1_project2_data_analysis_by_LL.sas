@@ -47,11 +47,11 @@ footnote3
 ;
 
 * 
-Methodology: Here I will use proc means to get the mean and median of the 
-homeowners and renters from the data set.
-
 Note: This is compares the columns "annual_inc" and "home_ownership" from 
 LoanStat_part1 to LoanStat_part3 with the same column names.
+
+Methodology: Here I will use proc means to get the mean and median of the 
+homeowners and renters from the data set.
 
 Limitations: I might run into some issues with trying to differentiate owners 
 versus mortgage and if owners might be landlords.
@@ -94,13 +94,13 @@ footnote3
 ;
 
 *
+Note:  This is compares the columns "annual_inc" "grade" "int_rate" and 
+"loan_amnt" from LoanStat_part1 to LoanStat_part3 with the same column names
+
 Methodology: Here I will try to use proc corr to find a correlation amongst the data
 following a model of possibly interest rate = annual income + loan amount + 
 grade with grade being a character variable so seeing how we apply log regg 
 for that.
-
-Note:  This is compares the columns "annual_inc" "grade" "int_rate" and 
-"loan_amnt" from LoanStat_part1 to LoanStat_part3 with the same column names
 
 Limitations: Will try to see if we can add more variables or possibly have to 
 add interactions within our model, could get messy.
@@ -161,11 +161,11 @@ footnote3
 ;
 
 *
-Methodology: Might want to go the box whiskerplot route for this data and 
-graph it with my y being loan amounts and x being type of loan.
-
 Note: This compares the columns "purpose" from datast LoanStat_Part2 with the 
 column "loan_amnt" from datasets LoanStat_Part1 and LoanStat_Part3.
+
+Methodology: Might want to go the box whiskerplot route for this data and 
+graph it with my y being loan amounts and x being type of loan.
 
 Limitations: Hopefully the data is clean enough to not vary in types of loans 
 and similarily having to distinguish sub types of loans.
@@ -176,7 +176,8 @@ states have different home costs.
 ;
 
 proc sgplot
-  data = Loanstat_analytic_file_h1;
+  data = Loanstat_analytic_file_h1
+  ;
     vbox loan_amnt / category = purpose
     ;
 run;
