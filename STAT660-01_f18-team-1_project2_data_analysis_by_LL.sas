@@ -84,7 +84,7 @@ title2
 ;
 
 footnote1
-' here we can see that annual inc has a negative correlation to interest rate and loan amount has a positive correlation which makes sense given that the size would have a higher interest rate due to risk it also seems that grade has a negative correlation including the A grade
+'here we can see that annual inc has a negative correlation to interest rate and loan amount has a positive correlation which makes sense given that the size would have a higher interest rate due to risk it also seems that grade has a negative correlation including the A grade'
 ;
 
 footnote2
