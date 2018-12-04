@@ -16,9 +16,6 @@ See included file for dataset properties
 * set relative file import path to current directory (using standard SAS trick);
 X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPATH))-%length(%sysget(SAS_EXECFILENAME))))""";
 
-* load external file that generates analytic datasets cde_2014_analytic_file,
-  cde_2014_analytic_file_sort_frpm, and cde_2014_analytic_file_sort_sat;
-
 %include '.\STAT660-01_f18-team-1_project2_data_preparation.sas';
 
 
@@ -82,7 +79,7 @@ title2
 ;
 
 footnote1
-' here we can see that annual inc has a negative correlation to interest rate and loan amount has a positive correlation which makes sense given that the size would have a higher interest rate due to risk it also seems that grade has a negative correlation including the A grade
+'here we can see that annual inc has a negative correlation to interest rate and loan amount has a positive correlation which makes sense given that the size would have a higher interest rate due to risk it also seems that grade has a negative correlation including the A grade'
 ;
 
 footnote2
