@@ -16,9 +16,8 @@ See included file for dataset properties
 * set relative file import path to current directory (using standard SAS trick);
 X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPATH))-%length(%sysget(SAS_EXECFILENAME))))""";
 
-* load external file that generates analytic datasets Loanstat_analytic_file_v1,
-Loanstat_analytic_file_h1, Loanstat_analytic_file_v1_sorted, and Loanstat_
-analytic_file_h1_sorted;
+* load external file that generates analytic datasets cde_2014_analytic_file,
+  cde_2014_analytic_file_sort_frpm, and cde_2014_analytic_file_sort_sat;
 
 %include '.\STAT660-01_f18-team-1_project2_data_preparation.sas';
 
