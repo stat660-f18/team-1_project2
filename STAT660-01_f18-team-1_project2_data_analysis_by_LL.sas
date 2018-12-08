@@ -79,7 +79,7 @@ title1
 ;
 
 title2
-'Rationale: This would help show what is considered in terms of interest rates'
+'Rationale: This would help show what factors are considered in terms of interest rates'
 ;
 
 footnote1
@@ -97,15 +97,12 @@ footnote3
 *
 Note:  This is compares the columns "annual_inc" "grade" "int_rate" and 
 "loan_amnt" from LoanStat_part1 to LoanStat_part3 with the same column names
-
 Methodology: Here I will try to use proc corr to find a correlation amongst the 
 data following a model of possibly interest rate = annual income + loan amount 
 + grade with grade being a character variable so seeing how we apply log regg 
 for that.
-
 Limitations: Will try to see if we can add more variables or possibly have to 
 add interactions within our model, could get messy.
-
 Follow Up: Might have to change the question around if we find no correlation
 by adding other variables.
 ;
@@ -115,7 +112,7 @@ proc glmmod
   data = 
     Loanstat_analytic_file_v1 
   outdesign=
-    Loanstat_analytic_file_v1 
+    Loanstat_analytic_file_v1_2 
   outparm=
     GLMParm
     ;
@@ -123,16 +120,13 @@ proc glmmod
     grade
     ;
    model 
-    int_rate = grade;
-run
-;
-proc print data=Loanstat_analytic_file_v1
-; 
+    int_rate =  grade loan_amnt annual_inc;
 run
 ;
 
+
 proc reg data =
-  Loanstat_analytic_file_v1 
+  Loanstat_analytic_file_v1_2 
   ;
   DummyVars: model int_rate = COL2-COL9
   ;
