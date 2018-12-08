@@ -97,43 +97,6 @@ footnote3
 *
 Note:  This is compares the columns "annual_inc" "grade" "int_rate" and 
 "loan_amnt" from LoanStat_part1 to LoanStat_part3 with the same column names
-
-Methodology: Here I will try to use proc corr to find a correlation amongst the 
-data following a model of possibly interest rate = annual income + loan amount 
-+ grade with grade being a character variable so seeing how we apply log regg 
-for that.
-
-Limitations: Will try to see if we can add more variables or possibly have to 
-add interactions within our model, could get messy.
-
-Follow Up: Might have to change the question around if we find no correlation
-by adding other variables.
-;
-
-
-title1
-'Research Question: Is there a correlation between interest rate and the annual income with loan amount and grade?'
-;
-
-title2
-'Rationale: This would help show what is considered in terms of interest rates'
-;
-
-footnote1
-'here we can see that annual inc has a negative correlation to interest rate and loan amount has a positive correlation which makes sense given that the size would have a higher interest rate due to risk it also seems that grade has a negative correlation including the A grade'
-;
-
-footnote2
-' we can also see that both values are greater than alpha and thus we can say that annual income and loan amount are significant to the interest rate'
-;
-
-footnote3
-'we might have to include grade and find out what determines grade but currently we cannot seem to find more information on it'
-;
-
-*
-Note:  This is compares the columns "annual_inc" "grade" "int_rate" and 
-"loan_amnt" from LoanStat_part1 to LoanStat_part3 with the same column names
 Methodology: Here I will try to use proc corr to find a correlation amongst the 
 data following a model of possibly interest rate = annual income + loan amount 
 + grade with grade being a character variable so seeing how we apply log regg 
