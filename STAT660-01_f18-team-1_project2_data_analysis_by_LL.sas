@@ -149,7 +149,7 @@ proc glmmod
   data = 
     Loanstat_analytic_file_v1 
   outdesign=
-    Loanstat_analytic_file_v1 
+    Loanstat_analytic_file_v1_2 
   outparm=
     GLMParm
     ;
@@ -157,16 +157,13 @@ proc glmmod
     grade
     ;
    model 
-    int_rate = grade;
-run
-;
-proc print data=Loanstat_analytic_file_v1
-; 
+    int_rate = loan_amnt annual_inc grade;
 run
 ;
 
+
 proc reg data =
-  Loanstat_analytic_file_v1 
+  Loanstat_analytic_file_v1_2 
   ;
   DummyVars: model int_rate = COL2-COL9
   ;
