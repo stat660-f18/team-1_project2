@@ -79,7 +79,7 @@ title1
 ;
 
 title2
-'Rationale: This would help show what is considered in terms of interest rates'
+'Rationale: This would help show what factors are considered in terms of interest rates'
 ;
 
 footnote1
