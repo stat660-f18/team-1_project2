@@ -176,6 +176,7 @@ data Loanstat_analytic_file_v1;
         grade
         int_rate
         loan_amnt
+        home_ownership
     ;
     keep
         member_id
@@ -183,6 +184,7 @@ data Loanstat_analytic_file_v1;
         grade
         int_rate
         loan_amnt
+        home_ownership
     ;
     set
         Loanstat1_raw(in=Loanstat1_data_row)
