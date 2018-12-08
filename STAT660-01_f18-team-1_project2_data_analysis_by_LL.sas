@@ -120,7 +120,7 @@ proc glmmod
     grade
     ;
    model 
-    int_rate = loan_amnt annual_inc grade;
+    int_rate =  grade loan_amnt annual_inc;
 run
 ;
 
